@@ -1,0 +1,31 @@
+.block { 
+    position: relative;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    border-bottom: 1px solid rgba(0,0,0,0.06);
+    cursor: pointer;
+}
+.imgBox {
+    position: relative;
+    height: 45px;
+    overflow: hidden;
+    border-radius: 50%;
+    width: 45px;
+    margin-right: 10px;
+}
+.details {
+    position: relative;
+    width: 100%;
+}
+.listName{
+    display: flex;
+    justify-content: space-around;
+}
+.block.active{
+    background: #ebebeb;
+}
+.block:hover{
+    background: #f5f5f5;
+}
