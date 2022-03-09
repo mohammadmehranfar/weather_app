@@ -1,12 +1,16 @@
-import React from 'react';
-import styles from './ChatManager.module.css';
-const ChatManager = ({cityData}) => {
-    console.log(cityData);
+import React, { useContext } from 'react';
+import { context } from './ItemContext';
+import ItemRight from './ItemRight';
+const ChatManager = () => {
+    const {state} = useContext(context);
+    const {cityList} = state;
     return (
-        <div className = {styles.chatBox}>
-
+        <div>
+             {
+                cityList && cityList.map((e,i) => <ItemRight el = {e} key = {i}/>)
+            }
         </div>
-    );
+    )
 };
 
 export default ChatManager;

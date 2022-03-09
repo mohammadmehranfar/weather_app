@@ -1,13 +1,15 @@
-import React , {useEffect, useRef} from 'react';
+import React , {useContext, useEffect, useRef} from 'react';
 import styles from './Items.module.css'
 import { fetchWeather } from '../api/fetchWeather';
-const Items = ({name,source,cityCtrl}) => {
+import { context } from './ItemContext';
+const Items = ({name,source}) => {
+    const {dispatch} = useContext(context);
     const useInsideAlerter = ref => {
         useEffect(() => {
             async function handleClickInside(event) {
                 if (ref.current && ref.current.contains(event.target)) {
                     const data = await fetchWeather(name);
-                    cityCtrl(data);
+                    dispatch({type : 'ADD-CITY',payload : data});
                 }
             }
             document.addEventListener("mousedown", handleClickInside);

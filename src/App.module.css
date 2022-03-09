@@ -25,12 +25,14 @@
     flex: 30%;
     background: #fff;
     border-left: 1px solid rgba(0, 0, 0, 2);
+    overflow-y: auto;
 
 }
 .rightSide {
     position: relative;
     flex: 70%;
     background: #e5ddd5;
+    overflow-y: auto;
 }
 .leftSide::before
 {
