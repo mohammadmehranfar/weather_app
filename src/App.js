@@ -1,4 +1,4 @@
-
+import React from 'react';
 import Search from './Components/Search';
 import styles from './App.module.css'
 import ChatManager from './Components/ChatManager';
