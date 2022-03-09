@@ -2,7 +2,7 @@ import React , { useState } from 'react';
 import styles from './Search.module.css';
 import { myCities } from '../cities/cities';
 import Items from './Items';
-const Search = () => {
+const Search = ({cityController}) => {
     const [search,setSearch] = useState('');
     const searchCities = myCities.filter(c => c.name.toLowerCase().includes(search.toLowerCase()));
     return (
@@ -15,7 +15,7 @@ const Search = () => {
             {
                 <div className = {styles.cityList}>
                     {
-                        searchCities.map(el => <Items key = {el.id} {...el}/>)
+                        searchCities.map(el => <Items key = {el.id} {...el} cityCtrl = {cityController}/>)                        
                     }
                 </div>
             }
